@@ -3,7 +3,7 @@ RV32I processor and memory units
 Uses RV32I Instruction set Architecture, with 23 insturcitons fully implemented. This was part of a class project so we only implemented necessary Instructions. This code is intended for the DE10-Lite Board which is programmed on Intel Quartus Prime Lite. 
 Coded in System Verilog
 
-#Operation:
+## Operation:
 
 Key[0]: resets the Program Counter
 Key[1]: increments the Program Counter
