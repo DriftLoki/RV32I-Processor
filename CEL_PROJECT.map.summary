@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Tue Feb 25 09:17:45 2025
+Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+Revision Name : CEL_PROJECT
+Top-level Entity Name : CEL_PROJECT
+Family : MAX 10
+Total logic elements : 9,902
+    Total combinational functions : 5,294
+    Dedicated logic registers : 5,152
+Total registers : 5152
+Total pins : 109
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

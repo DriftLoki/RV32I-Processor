@@ -1,0 +1,18 @@
+Fitter Status : Successful - Tue Feb 25 09:18:10 2025
+Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+Revision Name : CEL_PROJECT
+Top-level Entity Name : CEL_PROJECT
+Family : MAX 10
+Device : 10M50DAF484C7G
+Timing Models : Final
+Total logic elements : 7,284 / 49,760 ( 15 % )
+    Total combinational functions : 5,295 / 49,760 ( 11 % )
+    Dedicated logic registers : 5,152 / 49,760 ( 10 % )
+Total registers : 5152
+Total pins : 109 / 360 ( 30 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,677,312 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0 / 2 ( 0 % )
