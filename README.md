@@ -7,7 +7,7 @@ Coded in System Verilog
 ## Coding and Testing
 
 https://venus.kvakil.me/
-Venus is a RV32I simulator and allows you to code in Assembly and convert it to Machince Code. This is used to create a program to run on the cpu. Dump your program to machine code and copy it over to the riscvtest_rom_image text file and recompile and flash to the board. 
+Venus is a RV32I simulator and allows you to code in Assembly and convert it to Machince Code. This is used to create a program to run on the cpu. Dump your program to machine code and copy it over to the riscvtest_rom_image text file and recompile and flash to the board. The current Program computes the first 15 Fibonacci numbers Fib0 to Fib15 and writes the results on data memory locations 0x0 to 0xF.
 
 Inside the imem and dmem modules, replace the file path with the file path where the rom and ram files are when you extract the folder. Make sure that every back slash is actually a double back slash as shown in the provided code.
 
