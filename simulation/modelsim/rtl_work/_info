@@ -1,0 +1,444 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/simulation/modelsim
+T_opt
+Z1 !s110 1740491627
+Vm5Ume[R?caVRAnF]<MezE2
+04 14 4 work my_computer_tb fast 0
+=1-482ae33c9c92-67bdcb6b-1c6-16d8
+!s124 OEM10U18 
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vadder
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R1
+!i10b 1
+!s100 mV4o]g?LScIld=jl^N`ET3
+I`82UJ]552W9[A^S]PZ>Sh3
+S1
+R0
+Z4 w1740491610
+Z5 8C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv
+Z6 FC:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv
+!i122 1
+L0 320 5
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z9 !s108 1740491627.000000
+Z10 !s107 C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv|
+Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT|C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv|
+!i113 0
+Z12 o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z13 !s92 -sv -work work +incdir+C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+valu
+R3
+R1
+!i10b 1
+!s100 oXoN@7`go[GL:oPPAf>]I0
+I@<>3NEizG^3kTAhQX4jfK3
+S1
+R0
+R4
+R5
+R6
+!i122 1
+L0 360 31
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+valudec
+R3
+R1
+!i10b 1
+!s100 :FdXa3m4nUZ[:V?43Dlbe2
+I9Bl^mVEd^bcInZOkc[DZ?3
+S1
+R0
+R4
+R5
+R6
+!i122 1
+L0 259 25
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+vCEL_PROJECT
+!s110 1740491626
+!i10b 1
+!s100 K2?6lSIR]3SE@k_zHl=QX0
+ILE:aI3FjoHUg`:RE8CG<O3
+R0
+w1740491150
+8C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/cel_project.v
+FC:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/cel_project.v
+!i122 0
+L0 1 38
+R7
+R8
+r1
+!s85 0
+31
+!s108 1740491626.000000
+!s107 C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/cel_project.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT|C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/cel_project.v|
+!i113 0
+Z14 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z15 !s92 -vlog01compat -work work +incdir+C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+n@c@e@l_@p@r@o@j@e@c@t
+vcontroller
+R3
+R1
+!i10b 1
+!s100 8f78Iz89A[zFezbgaHXR83
+I?Df1N=0IIB<PYC_9KZM_G2
+S1
+R0
+R4
+R5
+R6
+!i122 1
+L0 212 20
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+vdatapath
+R3
+R1
+!i10b 1
+!s100 iR8ZQ=VI6J:J5aa[130=C0
+I`Gc:Se]53B:1<H:GolD3W1
+S1
+R0
+R4
+R5
+R6
+!i122 1
+L0 285 33
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+vdmem
+R3
+R1
+!i10b 1
+!s100 2h4I2m@Y]Tjj5cfS05dGX0
+IV;[C_O`cV;d_1zBd^][4[0
+S1
+R0
+R4
+R5
+R6
+!i122 1
+L0 144 31
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+vextend
+R3
+R1
+!i10b 1
+!s100 0PahEKf;cU[Y9<3?9chK10
+IPY>gzN4n:kKY9lSLSeC5;0
+S1
+R0
+R4
+R5
+R6
+!i122 1
+L0 326 17
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+vflopr
+R3
+R1
+!i10b 1
+!s100 VOPNeO<cL5[LSe=Og8;]I1
+I:^M<PUKVULih]8`^Ykh^Z3
+S1
+R0
+R4
+R5
+R6
+!i122 1
+L0 176 9
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+vimem
+R3
+R1
+!i10b 1
+!s100 hAGSL?SVQT<`CVe_`K]ic1
+IEJQ4lBY_>QkAOcK^C9[5E3
+S1
+R0
+R4
+R5
+R6
+!i122 1
+L0 129 13
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+vmaindec
+R3
+R1
+!i10b 1
+!s100 lFm>lOh[oS7?oOVWLb:iO2
+IlXIcMU[]2zYA>=@dd`IJ<1
+S1
+R0
+R4
+R5
+R6
+!i122 1
+L0 233 25
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+vmux2
+R3
+R1
+!i10b 1
+!s100 5XcVK6U0_oQbNFMOJPU9f3
+IFzLbkmLkG[zMR7z:Sz90?1
+S1
+R0
+R4
+R5
+R6
+!i122 1
+L0 344 7
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+vmux3
+R3
+R1
+!i10b 1
+!s100 :J0=MA;O34?]HnJTAB?2c2
+IGeC@L;QDhP4cIA:Sz9Z4j1
+S1
+R0
+R4
+R5
+R6
+!i122 1
+L0 352 7
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+vmy_computer
+R3
+R1
+!i10b 1
+!s100 YX0b;LZMK?>HP9?5aLik`0
+I1KWa_ScfL]3O8^:kYMR4J2
+S1
+R0
+R4
+R5
+R6
+!i122 1
+L0 83 21
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+vmy_computer_tb
+R1
+!i10b 1
+!s100 c7_1dl=VjNg7nGV2E^E370
+Icfi5j18k;aC0fj?IgV@SJ0
+R0
+w1740489008
+8C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/my_computer_tb.v
+FC:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/my_computer_tb.v
+!i122 2
+L0 3 21
+R7
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/my_computer_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT|C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/my_computer_tb.v|
+!i113 0
+R14
+R15
+R2
+vregfile
+R3
+R1
+!i10b 1
+!s100 >3bhF_J?Gldg<NQGgXe`i2
+Id2Q6aF4_cK=ScB67Z05i63
+S1
+R0
+R4
+R5
+R6
+!i122 1
+L0 109 19
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2
+vriscvsingle
+R3
+R1
+!i10b 1
+!s100 _XMmgPj^9c0jaX3Rn;KY62
+Ie044^iZ<aUbl^ESjbg;hS2
+S1
+R0
+R4
+R5
+R6
+!i122 1
+L0 190 21
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R13
+R2

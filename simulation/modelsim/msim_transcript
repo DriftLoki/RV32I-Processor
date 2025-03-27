@@ -1,0 +1,508 @@
+# Reading pref.tcl
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2021.2 win64 Apr 14 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do CEL_PROJECT_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Intel Starter FPGA Edition-64 vmap 2021.2 Lib Mapping Utility 2021.04 Apr 14 2021
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/21.1/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT {C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/cel_project.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 08:53:46 on Feb 25,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT" C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/cel_project.v 
+# -- Compiling module CEL_PROJECT
+# 
+# Top level modules:
+# 	CEL_PROJECT
+# End time: 08:53:46 on Feb 25,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT {C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 08:53:47 on Feb 25,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT" C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv 
+# -- Compiling module my_computer
+# -- Compiling module regfile
+# -- Compiling module imem
+# -- Compiling module dmem
+# -- Compiling module flopr
+# -- Compiling module riscvsingle
+# -- Compiling module controller
+# -- Compiling module maindec
+# -- Compiling module aludec
+# -- Compiling module datapath
+# -- Compiling module adder
+# -- Compiling module extend
+# -- Compiling module mux2
+# -- Compiling module mux3
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	my_computer
+# End time: 08:53:47 on Feb 25,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT {C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/my_computer_tb.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 08:53:47 on Feb 25,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT" C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/my_computer_tb.v 
+# -- Compiling module my_computer_tb
+# 
+# Top level modules:
+# 	my_computer_tb
+# End time: 08:53:47 on Feb 25,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  my_computer_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" my_computer_tb 
+# Start time: 08:53:47 on Feb 25,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.my_computer_tb(fast)
+# Loading sv_std.std
+# Loading work.my_computer(fast)
+# Loading work.riscvsingle(fast)
+# Loading work.controller(fast)
+# Loading work.maindec(fast)
+# Loading work.aludec(fast)
+# Loading work.datapath(fast)
+# Loading work.flopr(fast)
+# Loading work.adder(fast)
+# Loading work.mux2(fast)
+# Loading work.regfile(fast)
+# Loading work.extend(fast)
+# Loading work.alu(fast)
+# Loading work.mux3(fast)
+# Loading work.imem(fast)
+# Loading work.dmem(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (10) does not match connection size (32) for port 'my_sw'. The port definition is at: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv(84).
+#    Time: 0 ps  Iteration: 0  Instance: /my_computer_tb/U1 File: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/my_computer_tb.v Line: 8
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (10) for port 'my_sw'. The port definition is at: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv(147).
+#    Time: 0 ps  Iteration: 0  Instance: /my_computer_tb/U1/dmem File: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv Line: 99
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 129 of file "C:\Users\onur\Desktop\CE_Lab2\CEL_PROJECT\riscvtest_ram_image.txt". (Current address [128], address range [0:127])    : C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv(172)
+#    Time: 0 ps  Iteration: 0  Instance: /my_computer_tb/U1/dmem
+# Read  RAM[xxxxxxxx]=xxxxxxxx at                    0
+# Read  RAM[00000001]=00000001 at                10000
+# Read  RAM[00000001]=00000001 at                20000
+# Read  RAM[00000001]=00000001 at                30000
+# Read  RAM[00000003]=00000003 at                40000
+# Read  RAM[00000000]=00000000 at                50000
+# Read  RAM[00000001]=00000001 at                60000
+# Read  RAM[00000001]=00000001 at                70000
+# Read  RAM[00000002]=00000002 at                80000
+# Read  RAM[00000002]=00000002 at                90000
+# Read  RAM[00000000]=00000000 at               100000
+# Read  RAM[00000000]=00000000 at               110000
+# Read  RAM[00000000]=00000000 at               120000
+# Read  RAM[00000003]=00000003 at               130000
+# Read  RAM[00000001]=00000001 at               140000
+# Write RAM[00000018]=00000007 at               150000
+# Read  RAM[00000018]=00000007 at               160000
+# Read  RAM[00000004]=00000004 at               170000
+# Read  RAM[xxxxxxxx]=xxxxxxxx at               180000
+# Read  RAM[00000006]=00000006 at               190000
+# Write RAM[00000019]=00000019 at               200000
+# Read  RAM[00000000]=00000000 at               210000
+# Read  RAM[00000000]=00000000 at               220000
+# Read  RAM[00000000]=00000000 at               230000
+# Read  RAM[00000000]=00000000 at               240000
+# Read  RAM[00000000]=00000000 at               250000
+# Read  RAM[00000000]=00000000 at               260000
+# Read  RAM[00000000]=00000000 at               270000
+# Read  RAM[00000000]=00000000 at               280000
+# Read  RAM[00000000]=00000000 at               290000
+# Read  RAM[00000000]=00000000 at               300000
+# Read  RAM[00000000]=00000000 at               310000
+# Read  RAM[00000000]=00000000 at               320000
+# Read  RAM[00000000]=00000000 at               330000
+# Read  RAM[00000000]=00000000 at               340000
+# Read  RAM[00000000]=00000000 at               350000
+# Read  RAM[00000000]=00000000 at               360000
+# Read  RAM[00000000]=00000000 at               370000
+# Read  RAM[00000000]=00000000 at               380000
+# Read  RAM[00000000]=00000000 at               390000
+# Read  RAM[00000000]=00000000 at               400000
+# Read  RAM[00000000]=00000000 at               410000
+# Read  RAM[00000000]=00000000 at               420000
+# Read  RAM[00000000]=00000000 at               430000
+# Read  RAM[00000000]=00000000 at               440000
+# Read  RAM[00000000]=00000000 at               450000
+# Read  RAM[00000000]=00000000 at               460000
+# Read  RAM[00000000]=00000000 at               470000
+# Read  RAM[00000000]=00000000 at               480000
+# Read  RAM[00000000]=00000000 at               490000
+# Read  RAM[00000000]=00000000 at               500000
+# Read  RAM[00000000]=00000000 at               510000
+# Read  RAM[00000000]=00000000 at               520000
+# Read  RAM[00000000]=00000000 at               530000
+# Read  RAM[00000000]=00000000 at               540000
+# Read  RAM[00000000]=00000000 at               550000
+# Read  RAM[00000000]=00000000 at               560000
+# Read  RAM[00000000]=00000000 at               570000
+# Read  RAM[00000000]=00000000 at               580000
+# Read  RAM[00000000]=00000000 at               590000
+# Read  RAM[00000000]=00000000 at               600000
+# Read  RAM[00000000]=00000000 at               610000
+# Read  RAM[00000000]=00000000 at               620000
+# Read  RAM[00000000]=00000000 at               630000
+# Read  RAM[00000000]=00000000 at               640000
+# Read  RAM[00000000]=00000000 at               650000
+# Read  RAM[00000000]=00000000 at               660000
+# Read  RAM[00000000]=00000000 at               670000
+# Read  RAM[00000000]=00000000 at               680000
+# Read  RAM[00000000]=00000000 at               690000
+# Read  RAM[00000000]=00000000 at               700000
+# Read  RAM[00000000]=00000000 at               710000
+# Read  RAM[00000000]=00000000 at               720000
+# Read  RAM[00000000]=00000000 at               730000
+# Read  RAM[00000000]=00000000 at               740000
+# Read  RAM[00000000]=00000000 at               750000
+# Read  RAM[00000000]=00000000 at               760000
+# Read  RAM[00000000]=00000000 at               770000
+# Read  RAM[00000000]=00000000 at               780000
+# Read  RAM[00000000]=00000000 at               790000
+# Read  RAM[00000000]=00000000 at               800000
+# Read  RAM[00000000]=00000000 at               810000
+# Read  RAM[00000000]=00000000 at               820000
+# Read  RAM[00000000]=00000000 at               830000
+# Read  RAM[00000000]=00000000 at               840000
+# Read  RAM[00000000]=00000000 at               850000
+# Read  RAM[00000000]=00000000 at               860000
+# Read  RAM[00000000]=00000000 at               870000
+# Read  RAM[00000000]=00000000 at               880000
+# Read  RAM[00000000]=00000000 at               890000
+# Read  RAM[00000000]=00000000 at               900000
+# Read  RAM[00000000]=00000000 at               910000
+# Read  RAM[00000000]=00000000 at               920000
+# Read  RAM[00000000]=00000000 at               930000
+# Read  RAM[00000000]=00000000 at               940000
+# Read  RAM[00000000]=00000000 at               950000
+# Read  RAM[00000000]=00000000 at               960000
+# Read  RAM[00000000]=00000000 at               970000
+# Read  RAM[00000000]=00000000 at               980000
+# Read  RAM[00000000]=00000000 at               990000
+# Read  RAM[00000000]=00000000 at              1000000
+# Read  RAM[00000000]=00000000 at              1010000
+# Read  RAM[00000000]=00000000 at              1020000
+# ** Note: $stop    : C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/my_computer_tb.v(20)
+#    Time: 1022 ns  Iteration: 0  Instance: /my_computer_tb
+# Break in Module my_computer_tb at C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/my_computer_tb.v line 20
+# couldn't load library "C:/intelFPGA_lite/21.1/questa_fse/win64/ScintillaTk/ScintillaTk114.dll": this library or a dependent library could not be found in library path
+# ** Error: list element in quotes followed by ":" instead of space
+# Error in macro ./CEL_PROJECT_run_msim_rtl_verilog.do line 18
+# list element in quotes followed by ":" instead of space
+#     while executing
+# "foreach val $retval { 
+# 						set wobj [$vsimPriv(windowmgr) FindWindowObj $val]
+# 						if { $wobj ne "" && [lsearch $windowobj_list $wobj] < 0 } {
+# 				..."
+#     (procedure "view" line 144)
+#     invoked from within
+# "view source"
+#     (procedure "run" line 107)
+#     invoked from within
+# "run -all"
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.my_computer_tb(fast)
+# Loading work.my_computer(fast)
+# Loading work.riscvsingle(fast)
+# Loading work.controller(fast)
+# Loading work.maindec(fast)
+# Loading work.aludec(fast)
+# Loading work.datapath(fast)
+# Loading work.flopr(fast)
+# Loading work.adder(fast)
+# Loading work.mux2(fast)
+# Loading work.regfile(fast)
+# Loading work.extend(fast)
+# Loading work.alu(fast)
+# Loading work.mux3(fast)
+# Loading work.imem(fast)
+# Loading work.dmem(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (10) does not match connection size (32) for port 'my_sw'. The port definition is at: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv(84).
+#    Time: 0 ps  Iteration: 0  Instance: /my_computer_tb/U1 File: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/my_computer_tb.v Line: 8
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (10) for port 'my_sw'. The port definition is at: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv(147).
+#    Time: 0 ps  Iteration: 0  Instance: /my_computer_tb/U1/dmem File: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv Line: 99
+run
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 129 of file "C:\Users\onur\Desktop\CE_Lab2\CEL_PROJECT\riscvtest_ram_image.txt". (Current address [128], address range [0:127])    : C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv(172)
+#    Time: 0 ps  Iteration: 0  Instance: /my_computer_tb/U1/dmem
+# Read  RAM[xxxxxxxx]=xxxxxxxx at                    0
+# Read  RAM[00000001]=00000001 at                10000
+# Causality operation skipped due to absence of debug database file
+run
+# Read  RAM[00000001]=00000001 at                20000
+run
+# Read  RAM[00000001]=00000001 at                30000
+run
+# Read  RAM[00000003]=00000003 at                40000
+run
+# Read  RAM[00000000]=00000000 at                50000
+run
+# Read  RAM[00000001]=00000001 at                60000
+run
+# Read  RAM[00000001]=00000001 at                70000
+add wave -position end  sim:/my_computer_tb/U1/rvsingle/PC
+add wave -position end  sim:/my_computer_tb/U1/dmem/RAM[100]
+# couldn't load library "C:/intelFPGA_lite/21.1/questa_fse/win64/ScintillaTk/ScintillaTk114.dll": this library or a dependent library could not be found in library path
+add wave -position end  sim:/my_computer_tb/U1/dmem/RAM[96]
+run
+# Read  RAM[00000002]=00000002 at                80000
+run
+# Read  RAM[00000002]=00000002 at                90000
+run
+# Read  RAM[00000000]=00000000 at               100000
+run
+# Read  RAM[00000000]=00000000 at               110000
+run
+# Read  RAM[00000000]=00000000 at               120000
+run
+# Read  RAM[00000003]=00000003 at               130000
+run
+# Read  RAM[00000001]=00000001 at               140000
+run
+# Write RAM[00000018]=00000007 at               150000
+run
+# Read  RAM[00000018]=00000007 at               160000
+run
+# Read  RAM[00000004]=00000004 at               170000
+run
+# Read  RAM[xxxxxxxx]=xxxxxxxx at               180000
+run
+# Read  RAM[00000006]=00000006 at               190000
+run
+# Write RAM[00000019]=00000019 at               200000
+run
+# Read  RAM[00000000]=00000000 at               210000
+run
+# Read  RAM[00000000]=00000000 at               220000
+run
+# Read  RAM[00000000]=00000000 at               230000
+add wave -position end  sim:/my_computer_tb/U1/dmem/RAM[18]
+add wave -position end  sim:/my_computer_tb/U1/dmem/RAM[19]
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.my_computer_tb(fast)
+# Loading work.my_computer(fast)
+# Loading work.riscvsingle(fast)
+# Loading work.controller(fast)
+# Loading work.maindec(fast)
+# Loading work.aludec(fast)
+# Loading work.datapath(fast)
+# Loading work.flopr(fast)
+# Loading work.adder(fast)
+# Loading work.mux2(fast)
+# Loading work.regfile(fast)
+# Loading work.extend(fast)
+# Loading work.alu(fast)
+# Loading work.mux3(fast)
+# Loading work.imem(fast)
+# Loading work.dmem(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (10) does not match connection size (32) for port 'my_sw'. The port definition is at: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv(84).
+#    Time: 0 ps  Iteration: 0  Instance: /my_computer_tb/U1 File: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/my_computer_tb.v Line: 8
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (10) for port 'my_sw'. The port definition is at: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv(147).
+#    Time: 0 ps  Iteration: 0  Instance: /my_computer_tb/U1/dmem File: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv Line: 99
+run
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 129 of file "C:\Users\onur\Desktop\CE_Lab2\CEL_PROJECT\riscvtest_ram_image.txt". (Current address [128], address range [0:127])    : C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv(172)
+#    Time: 0 ps  Iteration: 0  Instance: /my_computer_tb/U1/dmem
+# Read  RAM[xxxxxxxx]=xxxxxxxx at                    0
+# Read  RAM[00000001]=00000001 at                10000
+run
+# Read  RAM[00000001]=00000001 at                20000
+run
+# Read  RAM[00000001]=00000001 at                30000
+run
+# Read  RAM[00000003]=00000003 at                40000
+run
+# Read  RAM[00000000]=00000000 at                50000
+run
+# Read  RAM[00000001]=00000001 at                60000
+run
+# Read  RAM[00000001]=00000001 at                70000
+run
+# Read  RAM[00000002]=00000002 at                80000
+run
+# Read  RAM[00000002]=00000002 at                90000
+run
+# Read  RAM[00000000]=00000000 at               100000
+run
+# Read  RAM[00000000]=00000000 at               110000
+run
+# Read  RAM[00000000]=00000000 at               120000
+run
+# Read  RAM[00000003]=00000003 at               130000
+run
+# Read  RAM[00000001]=00000001 at               140000
+run
+# Write RAM[00000018]=00000007 at               150000
+run
+# Read  RAM[00000018]=00000007 at               160000
+run
+# Read  RAM[00000004]=00000004 at               170000
+run
+# Read  RAM[xxxxxxxx]=xxxxxxxx at               180000
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.my_computer_tb(fast)
+# Loading work.my_computer(fast)
+# Loading work.riscvsingle(fast)
+# Loading work.controller(fast)
+# Loading work.maindec(fast)
+# Loading work.aludec(fast)
+# Loading work.datapath(fast)
+# Loading work.flopr(fast)
+# Loading work.adder(fast)
+# Loading work.mux2(fast)
+# Loading work.regfile(fast)
+# Loading work.extend(fast)
+# Loading work.alu(fast)
+# Loading work.mux3(fast)
+# Loading work.imem(fast)
+# Loading work.dmem(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (10) does not match connection size (32) for port 'my_sw'. The port definition is at: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv(84).
+#    Time: 0 ps  Iteration: 0  Instance: /my_computer_tb/U1 File: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/my_computer_tb.v Line: 8
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (10) for port 'my_sw'. The port definition is at: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv(147).
+#    Time: 0 ps  Iteration: 0  Instance: /my_computer_tb/U1/dmem File: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv Line: 99
+run
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 129 of file "C:\Users\onur\Desktop\CE_Lab2\CEL_PROJECT\riscvtest_ram_image.txt". (Current address [128], address range [0:127])    : C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv(172)
+#    Time: 0 ps  Iteration: 0  Instance: /my_computer_tb/U1/dmem
+# Read  RAM[xxxxxxxx]=xxxxxxxx at                    0
+# Read  RAM[00000001]=00000001 at                10000
+run
+# Read  RAM[00000001]=00000001 at                20000
+run
+# Read  RAM[00000001]=00000001 at                30000
+run
+# Read  RAM[00000003]=00000003 at                40000
+run
+# Read  RAM[00000000]=00000000 at                50000
+run
+# Read  RAM[00000001]=00000001 at                60000
+run
+# Read  RAM[00000001]=00000001 at                70000
+run
+# Read  RAM[00000002]=00000002 at                80000
+run
+# Read  RAM[00000002]=00000002 at                90000
+run
+# Read  RAM[00000000]=00000000 at               100000
+run
+# Read  RAM[00000000]=00000000 at               110000
+run
+# Read  RAM[00000000]=00000000 at               120000
+run
+# Read  RAM[00000003]=00000003 at               130000
+run
+# Read  RAM[00000001]=00000001 at               140000
+run
+# Write RAM[00000018]=00000007 at               150000
+run
+# Read  RAM[00000018]=00000007 at               160000
+run
+# Read  RAM[00000004]=00000004 at               170000
+run
+# Read  RAM[xxxxxxxx]=xxxxxxxx at               180000
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.my_computer_tb(fast)
+# Loading work.my_computer(fast)
+# Loading work.riscvsingle(fast)
+# Loading work.controller(fast)
+# Loading work.maindec(fast)
+# Loading work.aludec(fast)
+# Loading work.datapath(fast)
+# Loading work.flopr(fast)
+# Loading work.adder(fast)
+# Loading work.mux2(fast)
+# Loading work.regfile(fast)
+# Loading work.extend(fast)
+# Loading work.alu(fast)
+# Loading work.mux3(fast)
+# Loading work.imem(fast)
+# Loading work.dmem(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (10) does not match connection size (32) for port 'my_sw'. The port definition is at: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv(84).
+#    Time: 0 ps  Iteration: 0  Instance: /my_computer_tb/U1 File: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/my_computer_tb.v Line: 8
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (10) for port 'my_sw'. The port definition is at: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv(147).
+#    Time: 0 ps  Iteration: 0  Instance: /my_computer_tb/U1/dmem File: C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv Line: 99
+run
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 129 of file "C:\Users\onur\Desktop\CE_Lab2\CEL_PROJECT\riscvtest_ram_image.txt". (Current address [128], address range [0:127])    : C:/Users/onur/Desktop/CE_Lab2/CEL_PROJECT/riscvsingle.sv(172)
+#    Time: 0 ps  Iteration: 0  Instance: /my_computer_tb/U1/dmem
+# Read  RAM[xxxxxxxx]=xxxxxxxx at                    0
+# Read  RAM[00000001]=00000001 at                10000
+run
+# Read  RAM[00000001]=00000001 at                20000
+run
+# Read  RAM[00000001]=00000001 at                30000
+run
+# Read  RAM[00000003]=00000003 at                40000
+run
+# Read  RAM[00000000]=00000000 at                50000
+run
+# Read  RAM[00000001]=00000001 at                60000
+run
+# Read  RAM[00000001]=00000001 at                70000
+run
+# Read  RAM[00000002]=00000002 at                80000
+run
+# Read  RAM[00000002]=00000002 at                90000
+run
+# Read  RAM[00000000]=00000000 at               100000
+run
+# Read  RAM[00000000]=00000000 at               110000
+run
+# Read  RAM[00000000]=00000000 at               120000
+run
+# Read  RAM[00000003]=00000003 at               130000
+run
+# Read  RAM[00000001]=00000001 at               140000
+run
+# Write RAM[00000018]=00000007 at               150000
+run
+add wave -position end  sim:/my_computer_tb/U1/dmem/RAM[24]
+add wave -position end  sim:/my_computer_tb/U1/dmem/RAM[25]
+run
+# Read  RAM[00000018]=00000007 at               160000
+run
+run
+# Read  RAM[00000004]=00000004 at               170000
+run
+run
+# Read  RAM[xxxxxxxx]=xxxxxxxx at               180000
+run
+run
+# Read  RAM[00000006]=00000006 at               190000
+run
+run
+# Write RAM[00000019]=00000019 at               200000
+run
+run
+# Read  RAM[00000000]=00000000 at               210000
+# End time: 09:05:59 on Feb 25,2025, Elapsed time: 0:12:12
+# Errors: 0, Warnings: 3
