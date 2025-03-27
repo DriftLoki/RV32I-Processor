@@ -6,6 +6,9 @@ Coded in System Verilog
 
 ## Operation:
 
+https://venus.kvakil.me/
+Venus is a RV32I simulator and allows you to code in Assembly and convert it to Machince Code. This is used to create a program to run on the cpu. Dump your program to machine code and copy it over to the riscvtest_rom_image text file and recompile and flash to the board.
+
 Key[0]: resets the Program Counter
 Key[1]: increments the Program Counter
 
