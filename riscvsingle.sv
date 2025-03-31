@@ -64,9 +64,6 @@
 //   Instr[11:7]  = rd
 //   Instr[6:0]   = opcode
 
-
-							//Preimplemented
-				
 //   Instruction  opcode    funct3    funct7
 //   add          0110011   000       0000000
 //   sub          0110011   000       0100000
@@ -82,8 +79,6 @@
 //   sw           0100011   010       immediate
 //   jal          1101111   immediate immediate
 
-
-							//What we implemented
 
 //   Instruction_N	opcode	funct3	funct7
 //   xor					0110011 	100		0000000
@@ -101,8 +96,7 @@
 
 // This part is modified by Dr.Toker
 
-module my_computer(
-			  input  logic clk, reset, 
+module my_computer(input  logic        clk, reset, 
 			  input  logic[ 9:0] my_sw,
 			  output logic[31:0] my_rd,
 			  output logic[31:0] my_PC
@@ -112,25 +106,27 @@ module my_computer(
   logic MemWrite;
   
   // instantiate processor 
-  riscvsingle rvsingle(clk, reset, PC, Instr, MemWrite, DataAddr, WriteData, ReadData);
+  riscvsingle rvsingle(clk, reset, PC, Instr, MemWrite, DataAddr, 
+                       WriteData, ReadData);
+  // program memory - ROM
+  imem imem(PC, Instr);
   
-  imem imem(PC, Instr); // program memory - ROM
-  dmem dmem(clk, MemWrite, DataAddr, WriteData, ReadData, my_sw, my_rd); // data memort - RAM
+  // data memort - RAM
+  dmem dmem(clk, MemWrite, DataAddr, WriteData, ReadData, my_sw, my_rd);
   
   assign my_PC = PC;
+  
 endmodule
 
 // =======================================================================
 // NEW STUFF ABOUT MEMORIES - MUST REVIEW FIRST
 // =======================================================================
 
-module regfile(
-					input  logic clk, 
-               input  logic we3, 
+module regfile(input  logic        clk, 
+               input  logic        we3, 
                input  logic [ 4:0] a1, a2, a3,
                input  logic [31:0] wd3, 
-               output logic [31:0] rd1, rd2
-);
+               output logic [31:0] rd1, rd2);
 
   logic [31:0] rf[31:0];
 
@@ -146,10 +142,8 @@ module regfile(
   assign rd2 = (a2 != 0) ? rf[a2] : 0;
 endmodule
  
-module imem(
-				input  logic [31:0] a,
-            output logic [31:0] rd
-);
+module imem(input  logic [31:0] a,
+            output logic [31:0] rd);
 
   logic [31:0] ROM[63:0];
 
@@ -157,19 +151,17 @@ module imem(
   // Simulator : ok
   // Hardware  : For FPGA ok, non-FPGA we need a 3rd party solution to program the FLASH memory (ROM)
   initial
-      $readmemh("C:\\Users\\eugen\\OneDrive\\Desktop\\CEL_PROJECT\\riscvtest_rom_image.txt", ROM);
+      $readmemh("C:\\Users\\David Zambrano\\Documents\\Quartus Projects\\CEL_PROJECT\\CEL_PROJECT\\riscvtest_rom_image.txt", ROM);
 
   assign rd = ROM[a[31:2]]; // word aligned
 endmodule
 
 // This part is modified by Dr. Toker
-module dmem(
-				input  logic clk, we,
+module dmem(input  logic        clk, we,
             input  logic [31:0] a, wd,
             output logic [31:0] rd,
 				input  logic [ 7:0] my_sw,
-				output logic [31:0] my_rd
-);
+				output logic [31:0] my_rd);
 
   logic [31:0] RAM[127:0];
 
@@ -193,7 +185,7 @@ module dmem(
   // Simulator : ok
   // Hardware  : For FPGA ok, non-FPGA we need a 3rd party solution to program the DATA memory (RAM)
   initial
-      $readmemh("C:\\Users\\eugen\\OneDrive\\Desktop\\CEL_PROJECT\\riscvtest_ram_image.txt", RAM);  
+      $readmemh("C:\\Users\\David Zambrano\\Documents\\Quartus Projects\\CEL_PROJECT\\CEL_PROJECT\\riscvtest_ram_image.txt", RAM);  
   
 endmodule
  
@@ -211,14 +203,12 @@ endmodule
 // OLD STUFF - Component Instantiation or New Combinatorial Designs
 // =======================================================================
 
-module riscvsingle(
-						input  logic clk, reset,
-                  output logic [31:0] PC,
-                  input  logic [31:0] Instr,
-                  output logic MemWrite,
+module riscvsingle(input  logic        clk, reset,
+                   output logic [31:0] PC,
+                   input  logic [31:0] Instr,
+                   output logic        MemWrite,
              		output logic [31:0] ALUResult, WriteData,
-                  input  logic [31:0] ReadData
-);
+                   input  logic [31:0] ReadData);
 
   logic       ALUSrc, RegWrite, Jump, Zero;
   logic [1:0] ResultSrc, ImmSrc;
@@ -235,8 +225,7 @@ module riscvsingle(
               ALUResult, WriteData, ReadData);
 endmodule
 
-module controller( //handles the breakdown of the control bits to what they enable and disable
-						input  logic [6:0] op,
+module controller(input  logic [6:0] op,
                   input  logic [2:0] funct3,
                   input  logic       funct7b5,
                   input  logic       Zero,
@@ -245,33 +234,30 @@ module controller( //handles the breakdown of the control bits to what they enab
                   output logic       PCSrc, ALUSrc,
                   output logic       RegWrite, Jump,
                   output logic [1:0] ImmSrc,
-                  output logic [3:0] ALUControl
-);
+                  output logic [3:0] ALUControl);
 
   logic [1:0] ALUOp;
   logic       Branch;
 
-  maindec md(op, ResultSrc, MemWrite, Branch, ALUSrc, RegWrite, Jump, ImmSrc, ALUOp); //specific breakdown of opcode
+  maindec md(op, ResultSrc, MemWrite, Branch,
+             ALUSrc, RegWrite, Jump, ImmSrc, ALUOp);
   aludec  ad(op[5], funct3, funct7b5, ALUOp, ALUControl);
-  
-//PCSrc is specific for branch instructions. it is enabled if specific things are active
+
   assign PCSrc = Branch & Zero | Jump | Branch & !Zero & funct3 == 3'b001 | Branch & !Zero & funct3 == 3'b100 | Branch & funct3 == 3'b101;
-//(Branch, Zero = beq) or (jump enabled) or (Branch, !Zero, funct3(001) = bne) or (Branch, !Zero, funct3(100) = blt) or (Branch, funct3(101) = bge)
 endmodule
 
-module maindec( //Opcode to controls
-					input  logic [6:0] op,
+module maindec(input  logic [6:0] op,
                output logic [1:0] ResultSrc,
                output logic       MemWrite,
                output logic       Branch, ALUSrc,
                output logic       RegWrite, Jump,
                output logic [1:0] ImmSrc,
-               output logic [1:0] ALUOp
-);
+               output logic [1:0] ALUOp);
 
   logic [10:0] controls;
 
-  assign {RegWrite, ImmSrc, ALUSrc, MemWrite, ResultSrc, Branch, ALUOp, Jump} = controls;
+  assign {RegWrite, ImmSrc, ALUSrc, MemWrite,
+          ResultSrc, Branch, ALUOp, Jump} = controls;
 
   always_comb
     case(op)
@@ -286,13 +272,11 @@ module maindec( //Opcode to controls
     endcase
 endmodule
 
-module aludec(
-				  input  logic opb5,
+module aludec(input  logic       opb5,
               input  logic [2:0] funct3,
               input  logic       funct7b5, 
               input  logic [1:0] ALUOp,
-              output logic [3:0] ALUControl
-);
+              output logic [3:0] ALUControl);
 
   logic  RtypeSub;
   assign RtypeSub = funct7b5 & opb5;  // TRUE for R-type subtract instruction
@@ -302,7 +286,7 @@ module aludec(
     case(ALUOp)
       2'b00:                ALUControl = 4'b0000; // addition
       2'b01:                ALUControl = 4'b0001; // subtraction
-      default: case(funct3) // R-type or I-type ALU. We also added B-type alue
+      default: case(funct3) // R-type or I-type ALU
                  3'b000:  if (RtypeSub) 
                             ALUControl = 4'b0001; // sub
                           else      
@@ -310,14 +294,14 @@ module aludec(
 								 
 					  3'b001:	 if(RtypeSub)
 									ALUControl = 4'b0110; // sll
-									else if(funct7b5 == 1'b0) //checks specific bit 5 of funct7 to differentiate between slli and bne
+									else if(funct7b5 == 1'b0)
 									ALUControl = 4'b0110; // slli
 									else 
 									ALUControl = 4'b0001; //bne 
 					  
 					  3'b101:	if(RtypeSub)
 									ALUControl = 4'b0111; //srl
-									else if(funct7b5 == 1'b1) //checks specific bit 5 of funct7 to differentiate between srli and sra
+									else if(funct7b5 == 1'b1)
 									ALUControl = 4'b0111; // srli
 									else 
 									ALUControl = 4'b1000; // sra
@@ -328,17 +312,16 @@ module aludec(
                  3'b110:    ALUControl = 4'b0011; // or, ori
                  3'b111:    ALUControl = 4'b0010; // and, andi
 					  
-					  3'b100:	if(RtypeSub)  //we added this to associate this ALUop with xor and xori if R-type is active
+					  3'b100:	if(RtypeSub)
 										ALUControl = 4'b0100; // xor, xori
-										else //same ALUop but not R-type fo blt and bge
+										else 
 										ALUControl = 4'b0101; // blt, bge
                  default:   ALUControl = 4'bxxxx; // ???
                endcase
     endcase
 endmodule
 
-module datapath(
-					 input  logic        clk, reset,
+module datapath(input  logic        clk, reset,
                 input  logic [1:0]  ResultSrc, 
                 input  logic        PCSrc, ALUSrc,
                 input  logic        RegWrite,
@@ -348,8 +331,7 @@ module datapath(
                 output logic [31:0] PC,
                 input  logic [31:0] Instr,
                 output logic [31:0] ALUResult, WriteData,
-                input  logic [31:0] ReadData
-);
+                input  logic [31:0] ReadData);
 
   logic [31:0] PCNext, PCPlus4, PCTarget;
   logic [31:0] ImmExt;
